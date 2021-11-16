@@ -1,7 +1,7 @@
 package zlog
 
 import (
-	"ksc-base/golib/utils/metadata"
+	"github.com/ksc-base/golib/utils/metadata"
 	"strconv"
 	"time"
 	"github.com/gin-gonic/gin"

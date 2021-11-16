@@ -3,7 +3,7 @@ package golib
 import (
 	"encoding/json"
 	"fmt"
-	"ksc-base/golib/zlog"
+	"github.com/ksc-base/golib/zlog"
 	"net/http"
 	"strconv"
 	"strings"

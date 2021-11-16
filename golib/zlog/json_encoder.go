@@ -4,7 +4,7 @@ import (
 	"go.uber.org/zap"
 	"go.uber.org/zap/buffer"
 	"go.uber.org/zap/zapcore"
-	"ksc-base/golib/env"
+	"github.com/ksc-base/golib/env"
 )
 
 const (

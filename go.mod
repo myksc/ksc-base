@@ -1,4 +1,4 @@
-module ksc-base
+module github.com/ksc-base
 
 go 1.17
 

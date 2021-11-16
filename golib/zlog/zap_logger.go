@@ -3,7 +3,7 @@ package zlog
 import (
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
-	"ksc-base/golib/env"
+	"github.com/ksc-base/golib/env"
 )
 
 func GetZapLogger() (l *zap.Logger) {
