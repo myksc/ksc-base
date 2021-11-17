@@ -9,9 +9,9 @@ import (
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 	ormUtil "gorm.io/gorm/utils"
-	"github.com/ksc-base/golib/env"
-	"github.com/ksc-base/golib/utils"
-	"github.com/ksc-base/golib/zlog"
+	"github.com/myksc/ksc-base/golib/env"
+	"github.com/myksc/ksc-base/golib/utils"
+	"github.com/myksc/ksc-base/golib/zlog"
 	"time"
 )
 

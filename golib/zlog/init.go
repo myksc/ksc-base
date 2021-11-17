@@ -3,7 +3,7 @@ package zlog
 import (
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
-	"github.com/ksc-base/golib/env"
+	"github.com/myksc/ksc-base/golib/env"
 )
 
 // 对用户暴露的log配置

@@ -2,7 +2,7 @@ package env
 
 import (
 	"errors"
-	"github.com/ksc-base/golib/utils"
+	"github.com/myksc/ksc-base/golib/utils"
 	"reflect"
 	"strings"
 

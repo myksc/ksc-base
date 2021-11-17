@@ -3,7 +3,7 @@ package zlog
 import (
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
-	"github.com/ksc-base/golib/env"
+	"github.com/myksc/ksc-base/golib/env"
 )
 
 // GetLogger 获得一个新的logger 会把日志打印到 name.log 中，不建议业务使用

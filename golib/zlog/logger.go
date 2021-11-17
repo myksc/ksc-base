@@ -2,7 +2,7 @@ package zlog
 
 import (
 	"fmt"
-	"github.com/ksc-base/golib/env"
+	"github.com/myksc/ksc-base/golib/env"
 	"os"
 	"path/filepath"
 	"strings"
