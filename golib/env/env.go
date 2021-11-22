@@ -9,8 +9,6 @@ import (
 const DefaultRootPath = "."
 
 const (
-	// 容器中的环境变量
-	ZYBClusterType = "ZYB_CLUSTER_TYPE"
 	DockAppName    = "APP_NAME"
 	DockerRunEnv   = "RUN_ENV"
 )
@@ -34,19 +32,6 @@ var (
 )
 
 func init() {
-	//LocalIP = utils.GetLocalIp()
-	dockerPlateForm = false
-	if r := os.Getenv(ZYBClusterType); r != "" {
-		dockerPlateForm = true
-		// 容器里，appName在编排的时候决定
-		if n := os.Getenv(DockAppName); n != "" {
-			AppName = n
-			println("docker env, APP_NAME=", n)
-		} else {
-			println("docker env, lack APP_NAME!!!")
-		}
-	}
-
 	// 运行环境
 	RunMode = gin.ReleaseMode
 	r := os.Getenv(DockerRunEnv)
@@ -61,7 +46,6 @@ func init() {
 	}
 
 	gin.SetMode(RunMode)
-
 	initDBSecret()
 }
 
