@@ -1,4 +1,4 @@
-package golib
+package base
 
 import (
 	"encoding/json"
