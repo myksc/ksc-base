@@ -1,7 +1,7 @@
 package middleware
 
 import (
-	"git.zuoyebang.cc/pkg/golib/v2/utils/metadata"
+	"github.com/myksc/ksc-base/golib/utils/metadata"
 	"github.com/gin-gonic/gin"
 )
 

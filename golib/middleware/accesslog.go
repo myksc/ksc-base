@@ -7,9 +7,9 @@ import (
 	"strings"
 	"time"
 
-	"git.zuoyebang.cc/pkg/golib/v2/base"
-	"git.zuoyebang.cc/pkg/golib/v2/utils"
-	"git.zuoyebang.cc/pkg/golib/v2/zlog"
+	"github.com/myksc/ksc-base/golib/base"
+	"github.com/myksc/ksc-base/golib/utils"
+	"github.com/myksc/ksc-base/golib/zlog"
 	"github.com/gin-gonic/gin"
 	"github.com/pkg/errors"
 )
@@ -189,22 +189,19 @@ func AddNotice(k string, v interface{}) gin.HandlerFunc {
 }
 
 func LoggerBeforeRun(ctx *gin.Context) {
-	customCtx := ctx.CustomContext
 	fields := []zlog.Field{
-		zlog.String("handle", customCtx.HandlerName()),
-		zlog.String("type", customCtx.Type),
+		zlog.String("handle", ctx.HandlerName()),
+		zlog.String("type", ctx.ContentType()),
 	}
 
 	zlog.InfoLogger(ctx, "start", fields...)
 }
 
 func LoggerAfterRun(ctx *gin.Context) {
-	customCtx := ctx.CustomContext
-	cost := utils.GetRequestCost(customCtx.StartTime, customCtx.EndTime)
-	var err error
-	if customCtx.Error != nil {
-		err = errors.Cause(customCtx.Error)
-		base.StackLogger(ctx, customCtx.Error)
+	_, err := ctx.GetRawData();
+	if err != nil {
+		err = errors.Cause(err)
+		base.StackLogger(ctx, err)
 	}
 
 	// 用户自定义notice
@@ -216,11 +213,11 @@ func LoggerAfterRun(ctx *gin.Context) {
 	}
 
 	fields = append(fields,
-		zlog.String("handle", customCtx.HandlerName()),
-		zlog.String("type", customCtx.Type),
-		zlog.Float64("cost", cost),
+		zlog.String("handle", ctx.HandlerName()),
+		zlog.String("type", ctx.ContentType()),
 		zlog.String("error", fmt.Sprintf("%+v", err)),
 	)
 
 	zlog.InfoLogger(ctx, "end", fields...)
 }
+
